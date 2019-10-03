@@ -7,10 +7,11 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MaterialModule } from '../material/material.module';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, LayoutComponent, RegistrationComponent, RegisterComponent],
+  declarations: [HomeComponent, LayoutComponent, RegistrationComponent, RegisterComponent, LoginComponent],
   imports: [
     CommonModule,
     MainHomeRoutingModule,
