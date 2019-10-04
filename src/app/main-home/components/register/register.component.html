@@ -1,32 +1,47 @@
-<p>register works!</p>
-<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="50px" fxLayoutGap.xs="0">
-        <mat-card>
-                <mat-card-title>Login</mat-card-title>
-                <mat-card-content>
-                  <form>
-          
-                     <p>  
-                      <mat-form-field class="full-width">
-                        <mat-label> <i class="fas fa-envelope fa-1x"> </i>  
-                           Email
-                        </mat-label>
-                        <input  matInput  placeholder="Email" [(ngModel)]="email" name="email" required>
-                      </mat-form-field>
-                     </p>
-          
-                     <p>
-                      <mat-form-field class="full-width">
-                        <mat-label> <i class="fas fa-key fa-1x"> </i> 
-                           Password
-                        </mat-label>
-                        <input  matInput  type = 'password' placeholder="Password" [(ngModel)]="password" name="password" required>
-                      </mat-form-field>
-                     </p> 
-          
-                  </form>
-               </mat-card-content>
-                <mat-card-actions >
-                  <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
-                </mat-card-actions>
-          </mat-card>
-        </div>
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+    <i class="fab fa-stack-overflow fa-2x"></i>
+  <mat-card>    
+        <mat-card-content>
+          <form>
+              <p>  
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>  
+                       Display name
+                    </mat-label>
+                    <input  matInput  placeholder="Email" [(ngModel)]="dName" name="dName">
+                    <mat-icon matSuffix>face</mat-icon>
+                  </mat-form-field>
+                 </p>
+             <p>  
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>  
+                   Email
+                </mat-label>
+                <input  matInput  placeholder="Email" [(ngModel)]="email" name="email" required>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+             </p>
+  
+             <p>
+              <mat-form-field class="full-width" appearance="outline">
+                
+                <mat-label> 
+                  Password
+                </mat-label>
+                <input  matInput  type = 'password' placeholder="Password" [(ngModel)]="password" name="password" required>
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+             </p>
+             <div class="d-flex justify-content-around">
+                <!-- Forgot password -->
+                <a href=""><b></b>Forgot password?</a>
+              </div>
+          </form>
+       </mat-card-content>
+        <mat-card-actions  align='center'>
+          <button mat-raised-button (click)="register()" color="primary">Register</button>
+        </mat-card-actions>
+  </mat-card>
+  <p> Have an account? <a [routerLink]="'/login'"> Login </a></p>
+</div>
+

@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px;
+  }
+
+// .login-main{
+// margin-top: 10%;
+// }
+
+// mat-card{
+//   min-width: 40%;
+//   }
+  .mat-form-field {
+    width: 100%;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .fa-stack-overflow {
+    display: flex;
+    justify-content: center;
+    color:#cc6600;
+  }
+  a {
+    color:rgba(50, 68, 165, 0.803) !important;
+  }
+  a:hover {
+     color: rgba(14, 142, 189, 0.803)!important;
+  }
+  button:hover {
+    background-color: rgba(14, 142, 189, 0.803);
+  }
