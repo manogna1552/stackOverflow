@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('testObject', JSON.stringify(element));
           
           
-          this.router.navigate(['/home']); //navigating to dashboard
+          this.router.navigate(['/userHome']); //navigating to dashboard
         } else {
           
           this.errorMessage = 'Email id or Password is incorrect. Please try again.';

@@ -22,15 +22,14 @@ export const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+      {
+        path: 'userHome',
+        loadChildren: () =>
+          import('../user-home/user-home.module').then(
+            m => m.UserHomeModule
+          )
       }
-
-      // {
-      //   path: 'portfolio',
-      //   loadChildren: () =>
-      //     import('../portfolio/portfolio.module').then(
-      //       m => m.PortfolioModule
-      //     )
-      // }
     ]
   }
 ];
