@@ -7,12 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
-import { RegistrationComponent } from './registration/registration.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegistrationComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+    <!-- <i class="fab fa-stack-overflow fa-3x"></i> -->
+  <mat-card>    
+        <mat-card-content>
+          <form>
+             <p>  
+              <mat-form-field class="full-width">
+                <mat-label> <i class="fas fa-envelope fa-1x"> </i>  
+                   Email
+                </mat-label>
+                <input  matInput  placeholder="Email" [(ngModel)]="email" name="email" required>
+              </mat-form-field>
+             </p>
+  
+             <p>
+              <mat-form-field class="full-width">
+                
+                <mat-label> <i class="fas fa-key fa-1x"> </i> 
+                   enter Password
+                </mat-label>
+                <input  matInput  type = 'password' placeholder="Password" [(ngModel)]="password" name="password" required>
+              </mat-form-field>
+             </p>
+             <div class="d-flex justify-content-around">
+                <!-- Forgot password -->
+                <a href="">Forgot password?</a>
+              </div>
+          </form>
+       </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
+        </mat-card-actions>
+  </mat-card>
+  <p> Don’t have an account? <a [routerLink]="'/register'"> SignUp </a></p>
+</div>
+
