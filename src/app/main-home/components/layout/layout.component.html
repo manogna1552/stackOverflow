@@ -8,12 +8,16 @@
           <i class="fab fa-stack-overflow " style="color:#cc6600"></i>
           <p>Stackoverflow</p>
           <span class="menu-spacer"></span>
-          <div>
+          <div *ngIf="!showHead">
 
-            <a mat-stroked-button color="primary" [routerLink]="'/login'" routerLinkActive="active"> Login </a>
-            <a mat-raised-button color="primary" [routerLink]="'/register'" routerLinkActive="active"> SignUp </a>
-            
+            <a mat-stroked-button color="primary" [routerLink]="'/login'" > Log in </a>
+            <a mat-raised-button color="primary" [routerLink]="'/register'" > Sign up </a>
           </div>
+          <div *ngIf="showHead">
+
+              <a mat-stroked-button color="primary" [routerLink]="'/login'" routerLinkActive="active"> x </a>
+              <button mat-raised-button (click)="logout()" color="primary">Logout</button>
+            </div>
         </mat-toolbar-row>
       </mat-toolbar>
         <mat-sidenav-container fxFlexFill class="example-sidenav-container">

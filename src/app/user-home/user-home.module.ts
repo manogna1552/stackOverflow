@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { UserHomeRoutingModule } from './user-home-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    UserHomeRoutingModule
+    UserHomeRoutingModule,
+    MaterialModule,
   ],
   exports: [
       
