@@ -1,0 +1,27 @@
+<p>view-question works!</p>
+<mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{qTitle}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <p>
+        {{qBody}}
+        </p>
+         <p>
+            <mat-chip-list > 
+            <mat-chip *ngFor='let tag of tags'>{{tag}}</mat-chip>
+             </mat-chip-list>
+        </p>
+        <mat-card *ngFor='let answ of answers'>{{answ}}</mat-card>
+        </mat-card-content>
+        <h2>Your Answer</h2>
+        <form class="example-form">  
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Leave a comment" [(ngModel)]="ans" name="ans"></textarea>
+                </mat-form-field>
+              </form>
+              <mat-card-actions >
+                    <button mat-raised-button (click)="postAnswer()" color="primary">Post Your Answer</button>
+                  </mat-card-actions>
+    </mat-card>

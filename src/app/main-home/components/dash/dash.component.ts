@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetQuestionService} from './get-question.service';
 import {MatTableDataSource} from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dash',
@@ -15,7 +16,7 @@ export class DashComponent implements OnInit {
   dataSource: any;
   displayedColumns: any;
 
-  constructor(private getQuesService:GetQuestionService) {
+  constructor(private getQuesService:GetQuestionService, private router:Router) {
    
 
    }
@@ -44,5 +45,11 @@ export class DashComponent implements OnInit {
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  getRecord(row){
+
+console.log("row..",row)
+localStorage.setItem('row', JSON.stringify(row));
+this.router.navigate(['/view']);
   }
 }

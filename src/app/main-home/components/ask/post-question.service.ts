@@ -21,4 +21,23 @@ export class PostQuestionService {
 };
 return this.http.post(`http://localhost:3000/questions`, postData)
 }
+
+postAnswer(qid, answer) {
+  const httpOptions = {
+        headers : new HttpHeaders({'Content-Type': 'application/json',
+                                    Authorization : 'my-auth-token'
+        })
+    };
+  const postData = {
+          qid:qid,
+          answer:answer,
+    
+};
+return this.http.post(`http://localhost:3000/answers`, postData)
+}
+
+getAnswers(id) {
+  return this.http.get(`http://localhost:3000/answers?qid=${id}`)
+}
+
 }

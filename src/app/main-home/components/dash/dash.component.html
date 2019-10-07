@@ -27,5 +27,5 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row matRipple *matRowDef="let row; columns: displayedColumns;" [routerLink]="['home', row.name, 'info']"></mat-row>
+  <mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></mat-row>
 </mat-table>
