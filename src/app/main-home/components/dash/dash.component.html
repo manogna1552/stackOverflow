@@ -23,7 +23,7 @@
 
   <ng-container matColumnDef="tags" >
     <mat-header-cell *matHeaderCellDef> tags </mat-header-cell>
-    <mat-cell *matCellDef="let element"><mat-chip-list> <mat-chip *ngFor ="let tag of tags" color="primary" selected>{{tag}}</mat-chip></mat-chip-list> </mat-cell>
+    <mat-cell *matCellDef="let element"><mat-chip-list *ngFor= 'let tag of element.tags'> <mat-chip>{{tag}}</mat-chip></mat-chip-list> </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
