@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { UserHomeRoutingModule } from './user-home-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MaterialModule } from '../material/material.module';
+import { AskQuestionComponent } from './components/ask-question/ask-question.component';
+import { DashHomeComponent } from './components/dash-home/dash-home.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, AskQuestionComponent, DashHomeComponent],
   imports: [
     CommonModule,
     UserHomeRoutingModule,
@@ -15,7 +17,9 @@ import { MaterialModule } from '../material/material.module';
   ],
   exports: [
       
-      DashboardComponent // <--- Enable using the component in other modules
+      DashboardComponent,
+      AskQuestionComponent,
+      DashHomeComponent // <--- Enable using the component in other modules
     ]
 })
 export class UserHomeModule { }

@@ -1,0 +1,49 @@
+<p>ask works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+       
+      <mat-card>    
+            <mat-card-content>
+              <form >
+                  <p>  
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>  
+                           <!-- Ask a public question -->
+                          <b>Question title</b> 
+                        </mat-label>
+                        <input  matInput  placeholder="what's your programming question? Be specefic" [(ngModel)]="qTitle" name="qTitle" required>
+                        <mat-icon matSuffix>face</mat-icon>
+                        <mat-hint>Be specific and imagine you're asking a question to another developer</mat-hint>
+                      </mat-form-field>
+                     </p>
+                 <p>  
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>  
+                       <b>Question Body</b>
+                    </mat-label>
+                    <input  matInput  placeholder="Question body" [(ngModel)]="qBody" name="qBody" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-hint>Include all the information someone would need to ask your question</mat-hint>
+                  </mat-form-field>
+                 </p>
+
+                 <p>
+                        <mat-form-field appearance="outline">
+                                <mat-label><b>Tags</b></mat-label>
+                                <mat-select [formControl]="tags" multiple>
+                                  <mat-option *ngFor="let tag of tagsList" [value]="tag">{{tag}}</mat-option>
+                                </mat-select>
+                                <mat-hint>add upto 5 tags to describe what your question is about</mat-hint>
+                              </mat-form-field>
+                 
+                 </p>
+
+                
+              </form>
+           </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button (click)="asking()" color="primary">Post Your Question</button>
+            </mat-card-actions>
+      </mat-card>
+    </div>
+    
+    

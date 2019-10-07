@@ -1,0 +1,12 @@
+<p>dash works!</p>
+<a mat-stroked-button color="primary" [routerLink]="'/asking'" routerLinkActive="active"> ask ques</a>
+<div class="container">
+        <table class="table table-striped">
+          <tbody>
+            <tr *ngFor="let q of ques">
+              <td>{{ q.qTitle}}</td>
+              <td>{{ q.tags }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

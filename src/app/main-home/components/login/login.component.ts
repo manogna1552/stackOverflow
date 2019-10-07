@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
          
           console.log('element...',element)
           localStorage.setItem('testObject', JSON.stringify(element));
-          this.router.navigate(['/userHome']); //navigating to dashboard
+          // this.router.navigate(['/userHome']); //navigating to dashboard
+          this.router.navigate(['/afterLogin']);
           //location.reload();
 
         } else {
-          
           this.errorMessage = 'Email id or Password is incorrect. Please try again.';
           
         }

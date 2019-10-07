@@ -8,6 +8,8 @@ import {MatNativeDateModule,MatDatepickerModule,MatIconModule,
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -17,12 +19,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
       MatIconModule,MatButtonModule,MatCheckboxModule, 
       MatToolbarModule, MatCardModule,MatFormFieldModule,
       MatInputModule,MatRadioModule,MatListModule,FormsModule, 
-      ReactiveFormsModule,MatGridListModule,FlexLayoutModule,MatSidenavModule],
+      ReactiveFormsModule,MatGridListModule,FlexLayoutModule,MatSidenavModule,MatChipsModule,MatSelectModule],
       
   exports: [MatNativeDateModule,FormsModule,
       MatDatepickerModule,MatIconModule,MatButtonModule,
       MatCheckboxModule, MatToolbarModule, MatCardModule,
-      MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,MatSidenav,MatSidenavContent,MatSidenavModule]
+      MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,MatSidenav,MatSidenavContent,MatSidenavModule,MatChipsModule,MatSelectModule]
    
   })
   

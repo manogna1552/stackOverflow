@@ -4,6 +4,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashComponent } from './components/dash/dash.component';
+import { AskComponent } from './components/ask/ask.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +24,14 @@ export const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+      {
+        path: 'afterLogin',
+        component:DashComponent
+      },
+      {
+        path: 'asking',
+        component:AskComponent
       },
       {
         path: 'userHome',
