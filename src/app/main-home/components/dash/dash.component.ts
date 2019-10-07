@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetQuestionService} from './get-question.service';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-dash',
@@ -11,6 +12,8 @@ export class DashComponent implements OnInit {
   qTitle
   qBody
   tags
+  dataSource: any;
+  displayedColumns: any;
 
   constructor(private getQuesService:GetQuestionService) {
    
@@ -33,10 +36,13 @@ export class DashComponent implements OnInit {
         console.log("elemet",element.qTitle)
         console.log("elemet",element.qBody)
         console.log("elemet",element.tags)
+        this.displayedColumns = ['qTitle', 'qBody', 'tags'];
+      this.dataSource = new MatTableDataSource(this.ques);
           
       })
     })
   }
-
-
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

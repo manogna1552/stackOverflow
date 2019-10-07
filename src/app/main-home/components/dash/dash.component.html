@@ -1,12 +1,31 @@
 <p>dash works!</p>
 <a mat-stroked-button color="primary" [routerLink]="'/asking'" routerLinkActive="active"> ask ques</a>
-<div class="container">
-        <table class="table table-striped">
-          <tbody>
-            <tr *ngFor="let q of ques">
-              <td>{{ q.qTitle}}</td>
-              <td>{{ q.tags }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div></div>
+      <mat-form-field appearance="outline">   
+            <mat-label> <i class="fas fa-search fa-1x"> </i>  
+              Search Stocks
+          </mat-label>
+            <input matInput (keyup)="applyFilter($event.target.value)">
+            </mat-form-field>
+
+            <div class="no-records" *ngIf="dataSource?.filteredData.length == 0"> No records found !</div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource?.filteredData.length !=0"> 
+  <ng-container matColumnDef="qTitle">
+    <mat-header-cell *matHeaderCellDef> title</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.qTitle}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="qBody">
+    <mat-header-cell *matHeaderCellDef>body </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.qBody}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tags" >
+    <mat-header-cell *matHeaderCellDef> tags </mat-header-cell>
+    <mat-cell *matCellDef="let element"><mat-chip-list> <mat-chip *ngFor ="let tag of tags" color="primary" selected>{{tag}}</mat-chip></mat-chip-list> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row matRipple *matRowDef="let row; columns: displayedColumns;" [routerLink]="['home', row.name, 'info']"></mat-row>
+</mat-table>

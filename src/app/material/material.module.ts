@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -19,12 +20,12 @@ import {MatSelectModule} from '@angular/material/select';
       MatIconModule,MatButtonModule,MatCheckboxModule, 
       MatToolbarModule, MatCardModule,MatFormFieldModule,
       MatInputModule,MatRadioModule,MatListModule,FormsModule, 
-      ReactiveFormsModule,MatGridListModule,FlexLayoutModule,MatSidenavModule,MatChipsModule,MatSelectModule],
+      ReactiveFormsModule,MatGridListModule,FlexLayoutModule,MatSidenavModule,MatChipsModule,MatSelectModule,MatTableModule],
       
   exports: [MatNativeDateModule,FormsModule,
       MatDatepickerModule,MatIconModule,MatButtonModule,
       MatCheckboxModule, MatToolbarModule, MatCardModule,
-      MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,MatSidenav,MatSidenavContent,MatSidenavModule,MatChipsModule,MatSelectModule]
+      MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,MatSidenav,MatSidenavContent,MatSidenavModule,MatChipsModule,MatSelectModule,MatTableModule]
    
   })
   
