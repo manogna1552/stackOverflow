@@ -37,7 +37,7 @@ export class DashComponent implements OnInit {
         console.log("elemet",element.qTitle)
         console.log("elemet",element.qBody)
         console.log("elemet",element.tags)
-        this.displayedColumns = ['qTitle', 'qBody', 'tags'];
+        this.displayedColumns = ['qTitle', 'tags'];
       this.dataSource = new MatTableDataSource(this.ques);
           
       })

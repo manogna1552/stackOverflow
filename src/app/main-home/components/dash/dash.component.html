@@ -3,7 +3,7 @@
 <div></div>
       <mat-form-field appearance="outline">   
             <mat-label> <i class="fas fa-search fa-1x"> </i>  
-              Search Stocks
+              Search questions
           </mat-label>
             <input matInput (keyup)="applyFilter($event.target.value)">
             </mat-form-field>
@@ -16,10 +16,10 @@
     <mat-cell *matCellDef="let element"> {{element.qTitle}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="qBody">
+  <!-- <ng-container matColumnDef="qBody">
     <mat-header-cell *matHeaderCellDef>body </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.qBody}} </mat-cell>
-  </ng-container>
+  </ng-container> -->
 
   <ng-container matColumnDef="tags" >
     <mat-header-cell *matHeaderCellDef> tags </mat-header-cell>
