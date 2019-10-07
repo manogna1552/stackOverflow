@@ -11,7 +11,7 @@
                           <b>Question title</b> 
                         </mat-label>
                         <input  matInput  placeholder="what's your programming question? Be specefic" [(ngModel)]="qTitle" name="qTitle" required>
-                        <mat-icon matSuffix>face</mat-icon>
+                        <mat-icon matSuffix>spellcheck</mat-icon>
                         <mat-hint>Be specific and imagine you're asking a question to another developer</mat-hint>
                       </mat-form-field>
                      </p>
@@ -20,8 +20,8 @@
                     <mat-label>  
                        <b>Question Body</b>
                     </mat-label>
-                    <input  matInput  placeholder="Question body" [(ngModel)]="qBody" name="qBody" required>
-                    <mat-icon matSuffix>email</mat-icon>
+                    <textarea  matInput  placeholder="Question body" [(ngModel)]="qBody" name="qBody" required></textarea>
+                    <mat-icon matSuffix>code</mat-icon>
                     <mat-hint>Include all the information someone would need to ask your question</mat-hint>
                   </mat-form-field>
                  </p>
