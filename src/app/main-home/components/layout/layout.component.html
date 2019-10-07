@@ -14,8 +14,17 @@
             <a mat-raised-button color="primary" [routerLink]="'/register'" > Sign up </a>
           </div>
           <div *ngIf="showHead">
+          
+              <!-- <span *ngFor="let item of user| keyvalue">   -->
+                  <button mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon></button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item *ngFor="let item of user| keyvalue">{{item.value}}</button>
+                    
+                  </mat-menu>         
+                 <!-- Value: {{item.value}} -->
+                <!-- </span> -->
 
-              <a mat-stroked-button color="primary" [routerLink]="'/login'" routerLinkActive="active"> x </a>
+              <a mat-stroked-button color="primary" [routerLink]="'/'" routerLinkActive="active">x</a>
               <button mat-raised-button (click)="logout()" color="primary">Logout</button>
             </div>
         </mat-toolbar-row>

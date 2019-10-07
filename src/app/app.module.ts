@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
+import { EventEmitterServiceService } from './main-home/event-emitter-service.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [EventEmitterServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

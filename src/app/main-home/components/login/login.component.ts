@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { EventEmitterServiceService } from '../../event-emitter-service.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   password: string;
   errorMessage: string;
   users: any;
-  constructor(private router: Router , private loginService:LoginService) { }
+  constructor(private router: Router , private loginService:LoginService,private eventEmitterService: EventEmitterServiceService) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
           console.log('element...',element)
           localStorage.setItem('testObject', JSON.stringify(element));
           // this.router.navigate(['/userHome']); //navigating to dashboard
+         // this.eventEmitterService.onFirstComponentButtonClick();
           this.router.navigate(['/afterLogin']);
           //location.reload();
 
