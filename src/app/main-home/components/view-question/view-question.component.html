@@ -13,7 +13,25 @@
             <mat-chip *ngFor='let tag of tags'>{{tag}}</mat-chip>
              </mat-chip-list>
         </p>
-        <mat-card *ngFor='let answ of answers'>{{answ}}</mat-card>
+        
+       
+        <mat-card *ngFor='let answ of all'>{{answ.answer}}{{answ.id}}
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Please enter comment
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                  <input matInput placeholder="comment here" [(ngModel)]="comment" name="comment">       
+                </mat-form-field>
+              </mat-expansion-panel>
+              <mat-card-actions >
+                  <button mat-raised-button (click)="postComment(answ.id)" color="primary">Post Your Comment</button>
+                </mat-card-actions>
+        </mat-card>
+  
+  
         </mat-card-content>
         <h2>Your Answer</h2>
         <form class="example-form">  

@@ -14,6 +14,10 @@ export class ViewQuestionComponent implements OnInit {
   tags: any;
   ans:any;
  answers = [];
+ comment
+ answerIds=[];
+  all: any;
+
 
   constructor(private postQuesService:PostQuestionService, private router: Router) { }
 
@@ -37,6 +41,9 @@ export class ViewQuestionComponent implements OnInit {
       }
     })
     this.viewAnswer();
+    // console.log(this.answers,"answers array")
+    console.log("answer id's",this.all)
+    
   }
   postAnswer(){
     this.postQuesService.postAnswer(this.id,this.ans).subscribe(data=>{console.log("success")})
@@ -45,14 +52,18 @@ export class ViewQuestionComponent implements OnInit {
   }
 
   viewAnswer(){
-    this.postQuesService.getAnswers(this.id).subscribe((data:any) =>{
-      console.log(data)
-     //this.answers = data;
-     data.forEach((element) => {
-      this.answers.push(element.answer) 
-     })
+    this.postQuesService.getAnswers(this.id).subscribe((data) =>{
+      console.log(data," view answers")
+     this.all = data;
 
     })
+  }
+  postComment(answerID){
+    console.log(answerID ,"post id")
+    console.log(this.comment,"post comment")
+     this.postQuesService.postComment(this.id,answerID,this.comment).subscribe(data=>{console.log("success")})
+    this.router.navigate(['/view']);
+    location.reload();
   }
 
 }

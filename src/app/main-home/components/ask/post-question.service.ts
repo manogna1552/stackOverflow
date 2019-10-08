@@ -41,4 +41,23 @@ getAnswers(id) {
   return this.http.get(`http://localhost:3000/answers?qid=${id}`)
 }
 
+postComment(qid, answerID,comment) {
+  const httpOptions = {
+        headers : new HttpHeaders({'Content-Type': 'application/json',
+                                    Authorization : 'my-auth-token'
+        })
+    };
+  const postData = {
+          qid:qid,
+          answerID:answerID,
+          comment:comment
+    
+};
+return this.http.post(`http://localhost:3000/comments`, postData,httpOptions)
+}
+
+// getComments(qi) {
+//   return this.http.get(`http://localhost:3000/answers?qid=${id}`)
+// }
+
 }
