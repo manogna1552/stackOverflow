@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class PostQuestionService {
 
   constructor(private http:HttpClient) { }
-  postQuestion(qTitle, qBody, tags) {
+  postQuestion(qTitle, qBody, tags, uid) {
   const httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json',
                                     Authorization : 'my-auth-token'
@@ -17,6 +17,7 @@ export class PostQuestionService {
           qTitle:qTitle,
           qBody:qBody,
           tags:tags,
+          uid:uid
     
 };
 return this.http.post(`http://localhost:3000/questions`, postData)
@@ -33,7 +34,7 @@ postAnswer(qid, answer) {
           answer:answer,
     
 };
-return this.http.post(`http://localhost:3000/answers`, postData)
+return this.http.post(`http://localhost:3000/answers`, postData,httpOptions)
 }
 
 getAnswers(id) {
