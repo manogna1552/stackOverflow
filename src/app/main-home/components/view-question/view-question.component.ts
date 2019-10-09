@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostQuestionService } from '../ask/post-question.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-view-question',
@@ -17,6 +18,7 @@ export class ViewQuestionComponent implements OnInit {
  comment
  answerIds=[];
   all: any;
+  com=[];
 
 
   constructor(private postQuesService:PostQuestionService, private router: Router) { }
@@ -41,9 +43,6 @@ export class ViewQuestionComponent implements OnInit {
       }
     })
     this.viewAnswer();
-    // console.log(this.answers,"answers array")
-    console.log("answer id's",this.all)
-    
   }
   postAnswer(){
     this.postQuesService.postAnswer(this.id,this.ans).subscribe(data=>{console.log("success")})
@@ -52,9 +51,14 @@ export class ViewQuestionComponent implements OnInit {
   }
 
   viewAnswer(){
-    this.postQuesService.getAnswers(this.id).subscribe((data) =>{
+    this.postQuesService.getAnswers(this.id).subscribe((data:[]) =>{
       console.log(data," view answers")
      this.all = data;
+     this.all.forEach(data => {
+      console.log("*********",data.id);
+      this.viewComment(data.id)
+      
+    });
 
     })
   }
@@ -64,6 +68,24 @@ export class ViewQuestionComponent implements OnInit {
      this.postQuesService.postComment(this.id,answerID,this.comment).subscribe(data=>{console.log("success")})
     this.router.navigate(['/view']);
     location.reload();
+
+
   }
+
+  viewComment(ansid){
+
+    this.postQuesService.getComments(ansid).subscribe((data:any) =>{
+      console.log(data," viewcomments")
+     console.log(data[0],"ans id ")
+      data.forEach((element) => {
+       if(element != undefined){
+       console.log(element," elementcxghgchvg");
+        this.com.push(element);
+     }
+     });
+    })
+    
+  }
+
 
 }

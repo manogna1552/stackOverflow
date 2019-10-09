@@ -15,7 +15,13 @@
         </p>
         
        
-        <mat-card *ngFor='let answ of all'>{{answ.answer}}{{answ.id}}
+        <mat-card *ngFor='let answ of all'>{{answ.answer}}
+
+          <div *ngFor='let c of com'>
+            <div *ngIf='answ.id === c.answerID'>
+          {{c.comment}}
+        </div>
+          </div>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>

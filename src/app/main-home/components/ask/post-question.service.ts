@@ -56,8 +56,8 @@ postComment(qid, answerID,comment) {
 return this.http.post(`http://localhost:3000/comments`, postData,httpOptions)
 }
 
-// getComments(qi) {
-//   return this.http.get(`http://localhost:3000/answers?qid=${id}`)
-// }
+getComments(answerID) {
+  return this.http.get(`http://localhost:3000/comments?answerID=${answerID}`)
+}
 
 }
