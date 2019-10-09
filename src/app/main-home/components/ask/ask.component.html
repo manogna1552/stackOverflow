@@ -3,7 +3,7 @@
        
       <mat-card>    
             <mat-card-content>
-              <form >
+              <form #form='ngForm' (ngSubmit)="asking(form)">
                   <p>  
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>  
@@ -15,11 +15,15 @@
                         <mat-hint>Be specific and imagine you're asking a question to another developer</mat-hint>
                       </mat-form-field>
                      </p>
+                     <p>
+                        <ejs-richtexteditor #fromRTE [(value)]='value' required name="name" [(ngModel)]="value"></ejs-richtexteditor>
+                     </p>
                  <p>  
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>  
                        <b>Question Body</b>
                     </mat-label>
+                    
                     <textarea  matInput  placeholder="Question body" [(ngModel)]="qBody" name="qBody" required></textarea>
                     <mat-icon matSuffix>code</mat-icon>
                     <mat-hint>Include all the information someone would need to ask your question</mat-hint>
@@ -41,7 +45,7 @@
               </form>
            </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button (click)="asking()" color="primary">Post Your Question</button>
+              <button mat-raised-button ejs-button (click)="asking(form)" color="primary">Post Your Question</button>
             </mat-card-actions>
       </mat-card>
     </div>

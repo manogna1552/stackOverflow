@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { EventEmitterServiceService } from './main-home/event-emitter-service.service';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EventEmitterServiceService } from './main-home/event-emitter-service.se
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    RichTextEditorAllModule
   ],
   providers: [EventEmitterServiceService],
   bootstrap: [AppComponent]

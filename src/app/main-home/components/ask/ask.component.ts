@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { PostQuestionService } from './post-question.service';
 import { Router } from '@angular/router';
 
@@ -42,7 +42,8 @@ id: unknown;
     console.log(this.id," user id in ask")
     console.log()
   }
-  asking(){
+  asking(form: NgForm){
+    alert(form.value.name);
     console.log(this.tags.value)
     this.postQuesService.postQuestion(this.qTitle,this.qBody,this.tags.value,this.id).subscribe(data =>{
       alert("post Sucessful !!");
