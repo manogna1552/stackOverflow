@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
         if( (this.email == element.email) && (this.password == element.password) )  {
          
           console.log('element...',element)
+
           localStorage.setItem('testObject', JSON.stringify(element));
+          localStorage.setItem('userId',element.id)
           // this.router.navigate(['/userHome']); //navigating to dashboard
          // this.eventEmitterService.onFirstComponentButtonClick();
           this.router.navigate(['/afterLogin']);

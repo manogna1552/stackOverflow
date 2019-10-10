@@ -27,16 +27,16 @@ export class DashComponent implements OnInit {
      // this.ques = data;
      // console.log(this.ques," dash get ques")
       
-      console.log(data)
+     // console.log(data)
       this.ques = data;
-      console.log(data,"....data...")
+      //console.log(data,"....data...")
       this.ques.forEach((element) => {
         this.qTitle=element.qTitle
         this.qBody=element.qBody
         this.tags= element.tags
-        console.log("elemet",element.qTitle)
-        console.log("elemet",element.qBody)
-        console.log("elemet",element.tags)
+        // console.log("elemet",element.qTitle)
+        // console.log("elemet",element.qBody)
+        // console.log("elemet",element.tags)
         this.displayedColumns = ['qTitle', 'tags'];
       this.dataSource = new MatTableDataSource(this.ques);
           
@@ -48,7 +48,7 @@ export class DashComponent implements OnInit {
   }
   getRecord(row){
 
-console.log("row..",row)
+//console.log("row..",row)
 localStorage.setItem('row', JSON.stringify(row));
 this.router.navigate(['/view']);
   }

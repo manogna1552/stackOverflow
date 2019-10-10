@@ -7,6 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { DashComponent } from './components/dash/dash.component';
 import { AskComponent } from './components/ask/ask.component';
 import { ViewQuestionComponent } from './components/view-question/view-question.component';
+import { UserQuestionsComponent } from './components/user-questions/user-questions.component';
+import { UserCommentsComponent } from './components/user-comments/user-comments.component';
+import { UserAnswersComponent } from './components/user-answers/user-answers.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +40,18 @@ export const routes: Routes = [
       {
         path: 'view',
         component:ViewQuestionComponent
+      },
+      {
+        path: 'userAnswers',
+        component:UserAnswersComponent
+      },
+      {
+        path: 'userComments',
+        component:UserCommentsComponent
+      },
+      {
+        path: 'userQuestions',
+        component:UserQuestionsComponent
       },
       {
         path: 'userHome',

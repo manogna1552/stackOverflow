@@ -23,7 +23,7 @@ export class PostQuestionService {
 return this.http.post(`http://localhost:3000/questions`, postData)
 }
 
-postAnswer(qid, answer) {
+postAnswer(qid, answer,userId) {
   const httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json',
                                     Authorization : 'my-auth-token'
@@ -32,6 +32,7 @@ postAnswer(qid, answer) {
   const postData = {
           qid:qid,
           answer:answer,
+          uid:userId
     
 };
 return this.http.post(`http://localhost:3000/answers`, postData,httpOptions)
@@ -41,7 +42,7 @@ getAnswers(id) {
   return this.http.get(`http://localhost:3000/answers?qid=${id}`)
 }
 
-postComment(qid, answerID,comment) {
+postComment(qid, answerID,comment,userId) {
   const httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json',
                                     Authorization : 'my-auth-token'
@@ -50,7 +51,8 @@ postComment(qid, answerID,comment) {
   const postData = {
           qid:qid,
           answerID:answerID,
-          comment:comment
+          comment:comment,
+          uid:userId
     
 };
 return this.http.post(`http://localhost:3000/comments`, postData,httpOptions)

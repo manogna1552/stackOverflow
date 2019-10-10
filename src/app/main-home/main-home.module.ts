@@ -12,12 +12,16 @@ import { AskComponent } from './components/ask/ask.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { ViewQuestionComponent } from './components/view-question/view-question.component';
+import { HeaderComponent } from './components/header/header.component';
+import { UserQuestionsComponent } from './components/user-questions/user-questions.component';
+import { UserAnswersComponent } from './components/user-answers/user-answers.component';
+import { UserCommentsComponent } from './components/user-comments/user-comments.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, LayoutComponent,  RegisterComponent, LoginComponent, DashComponent, AskComponent, ViewQuestionComponent],
+  declarations: [HomeComponent, LayoutComponent,  RegisterComponent, LoginComponent, DashComponent, AskComponent, ViewQuestionComponent, HeaderComponent, UserQuestionsComponent, UserAnswersComponent, UserCommentsComponent],
   imports: [
     CommonModule,
     MainHomeRoutingModule,

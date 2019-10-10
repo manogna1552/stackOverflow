@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
 import { PostQuestionService } from './post-question.service';
 import { Router } from '@angular/router';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 
 @Component({
   selector: 'app-ask',
   templateUrl: './ask.component.html',
-  styleUrls: ['./ask.component.scss']
+  styleUrls: ['./ask.component.scss'],
+  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class AskComponent implements OnInit {
 qTitle
@@ -14,6 +16,10 @@ qBody
 tags
 tagsList : String[]
 id: unknown;
+
+public tools: object = {
+  items: ['Image']
+};
 
   constructor(private postQuesService:PostQuestionService, private router: Router) { }
 
@@ -44,7 +50,8 @@ id: unknown;
   }
   asking(form: NgForm){
     alert(form.value.name);
-    console.log(this.tags.value)
+    console.log(form.value.name)
+    console.log(this.tools,"tools....")
     this.postQuesService.postQuestion(this.qTitle,this.qBody,this.tags.value,this.id).subscribe(data =>{
       alert("post Sucessful !!");
       this.router.navigate(['/afterLogin']);

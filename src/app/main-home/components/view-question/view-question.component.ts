@@ -19,13 +19,15 @@ export class ViewQuestionComponent implements OnInit {
  answerIds=[];
   all: any;
   com=[];
+  userId;
 
 
   constructor(private postQuesService:PostQuestionService, private router: Router) { }
 
   ngOnInit() {
+    this.userId= localStorage.getItem('userId');
     const question = JSON.parse(localStorage.getItem('row'));
-    console.log("insdie view", question)
+   // console.log("insdie view", question)
     Object.entries(question).forEach( ([key, value]) => {
       switch(key) {
         case "id":
@@ -45,17 +47,21 @@ export class ViewQuestionComponent implements OnInit {
     this.viewAnswer();
   }
   postAnswer(){
-    this.postQuesService.postAnswer(this.id,this.ans).subscribe(data=>{console.log("success")})
-    this.router.navigate(['/view']);
-    location.reload();
+    this.postQuesService.postAnswer(this.id,this.ans,this.userId).subscribe(
+      data=>{
+        console.log("success")
+    });
+    this.router.navigate(['/afterLogin']);
+    //this.router.navigate(['/view']);
+   // location.reload();
   }
 
   viewAnswer(){
     this.postQuesService.getAnswers(this.id).subscribe((data:[]) =>{
-      console.log(data," view answers")
+     // console.log(data," view answers")
      this.all = data;
      this.all.forEach(data => {
-      console.log("*********",data.id);
+      //console.log("*********",data.id);
       this.viewComment(data.id)
       
     });
@@ -63,11 +69,12 @@ export class ViewQuestionComponent implements OnInit {
     })
   }
   postComment(answerID){
-    console.log(answerID ,"post id")
-    console.log(this.comment,"post comment")
-     this.postQuesService.postComment(this.id,answerID,this.comment).subscribe(data=>{console.log("success")})
-    this.router.navigate(['/view']);
-    location.reload();
+    //console.log(answerID ,"post id")
+    //console.log(this.comment,"post comment")
+     this.postQuesService.postComment(this.id,answerID,this.comment,this.userId).subscribe(data=>{console.log("success")})
+   // this.router.navigate(['/view']);
+   this.router.navigate(['/afterLogin']);
+   // location.reload();
 
 
   }
@@ -75,11 +82,11 @@ export class ViewQuestionComponent implements OnInit {
   viewComment(ansid){
 
     this.postQuesService.getComments(ansid).subscribe((data:any) =>{
-      console.log(data," viewcomments")
-     console.log(data[0],"ans id ")
+     // console.log(data," viewcomments")
+    // console.log(data[0],"ans id ")
       data.forEach((element) => {
        if(element != undefined){
-       console.log(element," elementcxghgchvg");
+     //  console.log(element," elementcxghgchvg");
         this.com.push(element);
      }
      });

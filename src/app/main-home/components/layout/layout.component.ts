@@ -28,7 +28,10 @@ export class LayoutComponent implements OnInit {
     if (event instanceof NavigationStart) {
       if (event['url'] == '/login' || event['url'] == '/register' || event['url'] == '/home' ) {
         this.showHead = false;
-      } else {
+      } else if(event['url'] == '/afterLogin'){
+        this.showHead = true;
+      }else
+      {
         this.showHead = true;
         this.getUser();
       }
@@ -48,12 +51,13 @@ export class LayoutComponent implements OnInit {
   logout(){
     localStorage.removeItem('testObject');
     this.router.navigate(['/home']);
+    this.showHead = false;
   }
 
   getUser(){
     this. user = JSON.parse(localStorage.getItem('testObject'));
     if (this.user == undefined) {
-      alert(' Access Denied, User not defined');
+     // alert(' Access Denied, User not defined');
       this.logout();
     } else {
       console.log(this.user, 'success');
