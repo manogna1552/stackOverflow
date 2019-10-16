@@ -1,55 +1,54 @@
-<p>ask works!</p>
+<div class ='head'>Ask a public question</div>
 <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
-       
-      <mat-card>    
-            <mat-card-content>
-              <form #form='ngForm' (ngSubmit)="asking(form)">
-                  <p>  
-                      <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>  
-                           <!-- Ask a public question -->
-                          <b>Question title</b> 
-                        </mat-label>
-                        <input  matInput  placeholder="what's your programming question? Be specefic" [(ngModel)]="qTitle" name="qTitle" required>
-                        <mat-icon matSuffix>spellcheck</mat-icon>
-                        <mat-hint>Be specific and imagine you're asking a question to another developer</mat-hint>
-                      </mat-form-field>
-                     </p>
-                     <p>
-                        <ejs-richtexteditor #fromRTE [(value)]='value' required name="name" [(ngModel)]="value"></ejs-richtexteditor>
-                        <!-- <ejs-richtexteditor #fromRTE [(value)]='value' id='iframeRTE' [toolbarSettings]='tools' required name="name" [(ngModel)]="value"></ejs-richtexteditor> -->
-                     </p>
-                 <!-- <p>  
-                  <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>  
-                       <b>Question Body</b>
-                    </mat-label>
-                    
-                    <textarea  matInput  placeholder="Question body" [(ngModel)]="qBody" name="qBody" required></textarea>
-                    <mat-icon matSuffix>code</mat-icon>
-                    <mat-hint>Include all the information someone would need to ask your question</mat-hint>
-                  </mat-form-field>
-                 </p> -->
+  <mat-card>
+    <mat-card-content>
+      <form #form="ngForm" (ngSubmit)="asking(form)">
+        <div>
+          <label>
+            <b>Title</b>
+            <p class="bHint">
+              Be specific and imagine you're asking a question to another
+              developer
+            </p>
+          </label>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>
+              <!-- Ask a public question -->
+              What's your programming question? Be specific.
+            </mat-label>
+            <input matInput placeholder="what's your programming question? Be specefic" [(ngModel)]="qTitle"
+              name="qTitle" required />
+            <mat-icon matSuffix>spellcheck</mat-icon>
+          </mat-form-field>
+        </div>
+        <div>
+          <label>
+            <b>Body</b>
+            <p class="bHint">
+              Include all the information someone would need to answer your
+              question
+            </p>
+          </label>
+          <ejs-richtexteditor #fromRTE [(value)]="value" required name="name" [(ngModel)]="value"></ejs-richtexteditor>
+        </div>
 
-                 <p>
-                        <mat-form-field appearance="outline">
-                                <mat-label><b>Tags</b></mat-label>
-                                <mat-select [formControl]="tags" multiple>
-                                  <mat-option *ngFor="let tag of tagsList" [value]="tag">{{tag}}</mat-option>
-                                </mat-select>
-                                <mat-hint>add upto 5 tags to describe what your question is about</mat-hint>
-                              </mat-form-field>
-                 
-                 </p>
-
-                
-              </form>
-           </mat-card-content>
-            <mat-card-actions>
-              <button mat-raised-button ejs-button (click)="asking(form)" color="primary">Post Your Question</button>
-            </mat-card-actions>
-      </mat-card>
-    </div>
-    <div [innerHTML]="fval"></div>
-    
-    
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label><b>Tags</b></mat-label>
+            <mat-select [formControl]="tags" multiple>
+              <mat-option *ngFor="let tag of tagsList" [value]="tag">{{
+                tag
+              }}</mat-option>
+            </mat-select>
+            <mat-hint>add upto 5 tags to describe what your question is about</mat-hint>
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button ejs-button (click)="asking(form)" color="primary">
+        Post Your Question
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
