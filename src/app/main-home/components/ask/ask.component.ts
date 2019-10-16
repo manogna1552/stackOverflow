@@ -12,14 +12,11 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@s
 })
 export class AskComponent implements OnInit {
 qTitle
-qBody
+qBody:any
 tags
 tagsList : String[]
 id: unknown;
-
-public tools: object = {
-  items: ['Image']
-};
+  fval: any;
 
   constructor(private postQuesService:PostQuestionService, private router: Router) { }
 
@@ -49,12 +46,12 @@ public tools: object = {
     console.log()
   }
   asking(form: NgForm){
-    alert(form.value.name);
+    //alert(form.value.name);
     console.log(form.value.name)
-    console.log(this.tools,"tools....")
+    this.qBody=form.value.name
     this.postQuesService.postQuestion(this.qTitle,this.qBody,this.tags.value,this.id).subscribe(data =>{
-      alert("post Sucessful !!");
-      this.router.navigate(['/afterLogin']);
+   //   alert("post Sucessful !!");
+     this.router.navigate(['/afterLogin']);
     })
   }
 

@@ -19,7 +19,7 @@
                         <ejs-richtexteditor #fromRTE [(value)]='value' required name="name" [(ngModel)]="value"></ejs-richtexteditor>
                         <!-- <ejs-richtexteditor #fromRTE [(value)]='value' id='iframeRTE' [toolbarSettings]='tools' required name="name" [(ngModel)]="value"></ejs-richtexteditor> -->
                      </p>
-                 <p>  
+                 <!-- <p>  
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>  
                        <b>Question Body</b>
@@ -29,7 +29,7 @@
                     <mat-icon matSuffix>code</mat-icon>
                     <mat-hint>Include all the information someone would need to ask your question</mat-hint>
                   </mat-form-field>
-                 </p>
+                 </p> -->
 
                  <p>
                         <mat-form-field appearance="outline">
@@ -50,5 +50,6 @@
             </mat-card-actions>
       </mat-card>
     </div>
+    <div [innerHTML]="fval"></div>
     
     

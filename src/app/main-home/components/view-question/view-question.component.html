@@ -5,7 +5,8 @@
   <hr>
   <mat-card-content>
     <div class='question'>
-      {{qBody}}
+        <div [innerHTML]="qBody"></div>
+      <!-- {{qBody}} -->
     </div>
     <div>
       <mat-chip-list>
