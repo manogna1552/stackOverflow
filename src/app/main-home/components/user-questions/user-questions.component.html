@@ -32,30 +32,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
 
-      <mat-form-field appearance="outline">   
-            <mat-label> 
-              Search questions
-          </mat-label>
-            <input matInput (keyup)="applyFilter($event.target.value)">
-            <mat-icon matSuffix>find_in_page</mat-icon>
-            </mat-form-field>
-
-            <div class="no-records" *ngIf="dataSource?.filteredData.length == 0"> No records found !</div>
-
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource?.filteredData.length !=0"> 
-  <ng-container matColumnDef="qTitle">
-    <mat-header-cell *matHeaderCellDef> title</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.qTitle}} </mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="tags" >
-    <mat-header-cell *matHeaderCellDef> tags </mat-header-cell>
-    <mat-cell *matCellDef="let element"><mat-chip-list *ngFor= 'let tag of element.tags'> <mat-chip>{{tag}}</mat-chip></mat-chip-list> </mat-cell>
-  </ng-container>
-
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></mat-row>
-</mat-table>
+    
 </mat-expansion-panel>
 </mat-accordion>
 

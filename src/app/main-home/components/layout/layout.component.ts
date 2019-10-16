@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Router, NavigationStart } from '@angular/router';
+import { Router, NavigationStart, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { EventEmitterServiceService } from '../../event-emitter-service.service';
 
 @Component({
@@ -19,22 +19,44 @@ export class LayoutComponent implements OnInit {
   id: unknown;
   user
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router,private eventEmitterService: EventEmitterServiceService  ) {
+  constructor(
+    changeDetectorRef: ChangeDetectorRef, 
+    media: MediaMatcher, 
+    private router: Router,
+    private eventEmitterService: EventEmitterServiceService) {
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
    // this.mobileQuery.addListener(this._mobileQueryListener);
    
+   
+   const path = this.router.url;
+
+   if (path == '/login' || path == '/register' || path == '/home' ) {
+    this.showHead = false;
+  } else if(path == '/afterLogin'){
+    this.showHead = true;
+  }else
+  {
+    this.showHead = true;
+    this.getUser();
+  }
+  
+
    router.events.forEach((event) => {
+
     if (event instanceof NavigationStart) {
-      if (event['url'] == '/login' || event['url'] == '/register' || event['url'] == '/home' ) {
+      let path = event['url'];
+      if (path == '/login' || path == '/register' || path == '/home' ) {
         this.showHead = false;
-      } else if(event['url'] == '/afterLogin'){
+      } else if(path == '/afterLogin'){
         this.showHead = true;
       }else
       {
         this.showHead = true;
         this.getUser();
       }
+      
     }
   });
     

@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserQuestionsComponent } from './components/user-questions/user-questions.component';
 import { UserAnswersComponent } from './components/user-answers/user-answers.component';
 import { UserCommentsComponent } from './components/user-comments/user-comments.component';
+import { AvatarModule } from 'ngx-avatar';
 
 
 
@@ -27,8 +28,8 @@ import { UserCommentsComponent } from './components/user-comments/user-comments.
     MainHomeRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    RichTextEditorAllModule
- 
+    RichTextEditorAllModule,
+    AvatarModule
   ]
 })
 export class MainHomeModule { }

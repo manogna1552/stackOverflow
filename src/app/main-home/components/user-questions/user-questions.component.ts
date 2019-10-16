@@ -22,7 +22,7 @@ export class UserQuestionsComponent implements OnInit {
 
   ngOnInit() {
     //console.log('***before**');
-   this.id = localStorage.getItem('userId');
+    this.id = localStorage.getItem('userId');
     this.viewUserQuestions();
   }
 
@@ -42,21 +42,6 @@ this.userSpecificService.getUserQuestions(this.id).subscribe(data=>{
 })
   }
 
-  // viewUserAnswers() {
-   
-  //   this.userSpecificService.getUserAnswers(this.id).subscribe(data=>{
-  //     console.log(data," user specific answers")
-  //     this.questions=data;
-  //     this.questions.forEach((element) => {
-  //       this.qTitle=element.qTitle
-  //       this.qBody=element.qBody
-  //       this.tags= element.tags
-  //       this.displayedColumns = ['qTitle', 'tags'];
-  //     this.dataSource = new MatTableDataSource(this.questions);
-          
-  //     })
-  //   })
-  //     }
 
   getRecord(row){
     //console.log("row..",row)

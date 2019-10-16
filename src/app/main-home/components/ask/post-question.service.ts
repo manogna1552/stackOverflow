@@ -62,4 +62,8 @@ getComments(answerID) {
   return this.http.get(`http://localhost:3000/comments?answerID=${answerID}`)
 }
 
+getUserName(id){
+  return this.http.get(`http://localhost:3000/users?id=${id}`)
+}
+
 }

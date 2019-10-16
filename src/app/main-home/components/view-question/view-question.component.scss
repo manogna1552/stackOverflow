@@ -1,4 +1,46 @@
 // .example-card {
 //     max-width: 400px;
 //   }
-  
+.comment{
+    // color:rgb(14, 139, 184);
+    font-family: serif;
+    font-size: 12px;
+    font-style: italic; 
+    background-color: whitesmoke;
+}
+.answer{
+    color:rgb(27, 78, 113);
+    font-family: serif;
+    font-size: 14px;
+    
+    
+}
+.question{
+    font-size: 16px;
+    font-family: serif;
+}
+.atitle{
+    color: rgb(117, 126, 136);
+}
+.expand{
+    height: 18px !important;
+
+}
+.mat-chip{
+     font-style: italic;
+     //color: darkred;
+    color: #39739d !important;
+    background-color: #E1ECF4 !important;
+    border-color: #E1ECF4 !important;
+}
+.sub-header h1{
+    color: #3b4045;
+    font-size: 16px;
+}
+.user-info{
+    box-sizing: border-box;
+    padding: 5px 6px 7px 7px;
+    width: 200px;
+   // color: #6a737c;
+   // background-color: #E1ECF4!important;
+}

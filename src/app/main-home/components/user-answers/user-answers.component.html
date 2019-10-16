@@ -1,5 +1,16 @@
-<p>user-answers works!</p>
-<mat-card>
- 
-    
-</mat-card>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource?.filteredData.length !=0"> 
+  <ng-container matColumnDef="qTitle">
+    <mat-header-cell *matHeaderCellDef> title</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.qTitle}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tags" >
+    <mat-header-cell *matHeaderCellDef> tags </mat-header-cell>
+    <mat-cell *matCellDef="let element"><mat-chip-list *ngFor= 'let tag of element.tags'> <mat-chip>{{tag}}</mat-chip></mat-chip-list> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></mat-row>
+</mat-table>

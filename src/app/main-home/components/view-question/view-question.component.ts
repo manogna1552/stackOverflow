@@ -20,6 +20,8 @@ export class ViewQuestionComponent implements OnInit {
   all: any;
   com=[];
   userId;
+  count: any;
+  ansName=[];
 
 
   constructor(private postQuesService:PostQuestionService, private router: Router) { }
@@ -60,9 +62,12 @@ export class ViewQuestionComponent implements OnInit {
     this.postQuesService.getAnswers(this.id).subscribe((data:[]) =>{
      // console.log(data," view answers")
      this.all = data;
+     this.count= this.all.length;
+     console.log(this.all,"count...")
      this.all.forEach(data => {
       //console.log("*********",data.id);
       this.viewComment(data.id)
+      this.viewUserName(data.uid);
       
     });
 
@@ -93,6 +98,23 @@ export class ViewQuestionComponent implements OnInit {
     })
     
   }
+  viewUserName(uid) {
+this.postQuesService.getUserName(uid).subscribe((data:any)=>{
+  //this.userDet=data
+  data.forEach(data => {
+    //console.log(data)
+    //this.ansName = data.dName
+   
+    this.ansName.push(data);
+    
+   
+    
+  });
+console.log(this.ansName,"ans Name..")
+})
 
 
+  }
+ 
+ 
 }

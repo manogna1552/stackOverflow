@@ -15,6 +15,7 @@ import { MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 
+
 @NgModule({
   declarations: [],
   imports: [CommonModule,MatButtonModule,MatToolbarModule,
@@ -27,7 +28,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
   exports: [MatNativeDateModule,FormsModule,
       MatDatepickerModule,MatIconModule,MatButtonModule,
       MatCheckboxModule, MatToolbarModule, MatCardModule,
-      MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,MatSidenav,MatSidenavContent,MatSidenavModule,MatChipsModule,MatSelectModule,MatTableModule,MatMenuModule,MatExpansionModule]
+      MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,MatSidenav,MatSidenavContent,MatSidenavModule,MatChipsModule,MatSelectModule,MatTableModule,MatMenuModule,MatExpansionModule,MatGridListModule]
    
   })
   
