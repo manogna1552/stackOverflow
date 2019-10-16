@@ -6,7 +6,7 @@ import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import { MaterialModule } from 'src/app/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
+// import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 const fakeUserData = [
