@@ -21,6 +21,12 @@
 
     <mat-card class="answer" *ngFor='let answ of all'>
       <div [innerHTML]="answ.answer"></div>
+      <div *ngFor='let aName of ansName | userName'>
+          <div *ngIf='answ.uid == aName.id' class='av'>
+             <mat-chip><ngx-avatar size="30" name='{{aName.dName}}'></ngx-avatar>
+              {{ aName.dName}}</mat-chip>
+          </div>
+        </div>
       <div *ngFor='let c of com'>
         <div *ngIf='answ.id === c.answerID'>
           <mat-card class="comment">
@@ -29,15 +35,7 @@
 
         </div>
       </div>
-      <div *ngFor='let aName of ansName | userName'>
-        <div *ngIf='answ.uid == aName.id'>
-          <mat-card>
-            <ngx-avatar size="30" name='{{aName.dName}}'></ngx-avatar>
-            {{aName.dName}}
-          </mat-card>
-
-        </div>
-      </div>
+      
 
 
       <mat-expansion-panel>

@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { NgForm } from '@angular/forms';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-view-question',
