@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { PostQuestionService } from '../ask/post-question.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-view-question',
   templateUrl: './view-question.component.html',
-  styleUrls: ['./view-question.component.scss']
+  styleUrls: ['./view-question.component.scss'],
+  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class ViewQuestionComponent implements OnInit {
   id: unknown;
@@ -48,7 +51,8 @@ export class ViewQuestionComponent implements OnInit {
     })
     this.viewAnswer();
   }
-  postAnswer(){
+  postAnswer(form: NgForm){
+    this.ans =form.value.name
     this.postQuesService.postAnswer(this.id,this.ans,this.userId).subscribe(
       data=>{
         console.log("success")
