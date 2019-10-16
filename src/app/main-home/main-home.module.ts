@@ -17,12 +17,13 @@ import { UserQuestionsComponent } from './components/user-questions/user-questio
 import { UserAnswersComponent } from './components/user-answers/user-answers.component';
 import { UserCommentsComponent } from './components/user-comments/user-comments.component';
 import { AvatarModule } from 'ngx-avatar';
+import { UserNamePipe } from './user-name.pipe';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, LayoutComponent,  RegisterComponent, LoginComponent, DashComponent, AskComponent, ViewQuestionComponent, HeaderComponent, UserQuestionsComponent, UserAnswersComponent, UserCommentsComponent],
+  declarations: [HomeComponent, LayoutComponent,  RegisterComponent, LoginComponent, DashComponent, AskComponent, ViewQuestionComponent, HeaderComponent, UserQuestionsComponent, UserAnswersComponent, UserCommentsComponent, UserNamePipe],
   imports: [
     CommonModule,
     MainHomeRoutingModule,
