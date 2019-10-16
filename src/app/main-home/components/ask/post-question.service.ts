@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class PostQuestionService {
 
   constructor(private http:HttpClient) { }
+  
   postQuestion(qTitle, qBody, tags, uid) {
   const httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json',

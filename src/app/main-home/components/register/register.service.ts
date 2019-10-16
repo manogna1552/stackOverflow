@@ -8,6 +8,7 @@ export class RegisterService {
  
 
   constructor(private http:HttpClient) { }
+
   postUserDetails(dName, email, password) {
   const httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json',
@@ -19,7 +20,6 @@ export class RegisterService {
     email:email,
     password:password
 };
-
   return this.http.post(`http://localhost:3000/users`, postData)
 }
 

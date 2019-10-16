@@ -13,22 +13,5 @@ export class UserSpecificService {
     return this.http.get(`http://localhost:3000/questions?uid=${userId}`)   
 
 }
-getUserQuesId(qid) {
-  // const Headers = new HttpHeaders({ 'Content-Type': 'application/json'});
-   return this.http.get(`http://localhost:3000/questions?id=${qid}`)   
-
-}
-getUserAnswers(userId) {
-   
-  // const Headers = new HttpHeaders({ 'Content-Type': 'application/json'});
-   return this.http.get(`http://localhost:3000/questions?uid=${userId}`)   
-
-}
-getUserComments(userId) {
-   
-  // const Headers = new HttpHeaders({ 'Content-Type': 'application/json'});
-   return this.http.get(`http://localhost:3000/questions?uid=${userId}`)   
-
-}
 
 }
