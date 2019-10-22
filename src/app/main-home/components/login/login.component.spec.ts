@@ -26,7 +26,7 @@ const fakeUserData = [
 const mockLogInPageSvc = {
   getUserDetails: () => of(fakeUserData)
 };
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let logInPageSvc: LoginService;

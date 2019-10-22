@@ -24,12 +24,7 @@ export class DashComponent implements OnInit {
   ngOnInit() {
     console.log("ng init")
     this.getQuesService.getQuestions().subscribe((data)=>{
-     // this.ques = data;
-     // console.log(this.ques," dash get ques")
-      
-     // console.log(data)
       this.ques = data;
-      //console.log(data,"....data...")
       this.ques.forEach((element) => {
         this.qTitle=element.qTitle
         this.qBody=element.qBody

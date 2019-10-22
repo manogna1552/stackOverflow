@@ -6,7 +6,7 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 
-fdescribe('LoginService', () => {
+describe('LoginService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
     providers: [LoginService]

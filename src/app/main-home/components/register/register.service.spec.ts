@@ -3,7 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { RegisterService } from './register.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-fdescribe('RegisterService', () => {
+describe('RegisterService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
     providers: [RegisterService]

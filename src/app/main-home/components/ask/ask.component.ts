@@ -43,12 +43,15 @@ id: unknown;
       }
     })
     console.log(this.id," user id in ask")
-    console.log()
+    console.log("insdie1 view ask", question)
   }
+
   asking(form: NgForm){
-    //alert(form.value.name);
+    //alert(form.value.);
+    //console.log(form,"mock form")
     console.log(form.value.name)
     this.qBody=form.value.name
+    console.log(this.tags,"tags......33333")
     this.postQuesService.postQuestion(this.qTitle,this.qBody,this.tags.value,this.id).subscribe(data =>{
    //   alert("post Sucessful !!");
      this.router.navigate(['/afterLogin']);

@@ -3,7 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { PostQuestionService } from './post-question.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-fdescribe('PostQuestionService', () => {
+describe('PostQuestionService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
       providers: [PostQuestionService]

@@ -33,7 +33,7 @@ const mockRegPageSvc= {
 // }
 //    };
 
-fdescribe('RegisterComponent', () => {
+describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
   let regPageSvc: RegisterService;
@@ -119,23 +119,4 @@ fdescribe('RegisterComponent', () => {
     // assert
    expect(component.email).toBeFalsy();
   });
-
-  // it('if user array empty  ', async() => {
-  //   // arrange
-  //   var spy = spyOn(component,'onPost').and.callThrough();
-  //   component.register();
-  //   expect(spy).toHaveBeenCalled();
-  // });
-  // it('if user exists ', async() => {
-  //   let fakeUserData1=[]
-  
-  //   fixture.detectChanges();
-    
-  //   component.register();
-  //   fixture.detectChanges();
-   
-  // });
-
-
-
 });

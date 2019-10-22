@@ -3,7 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { UserSpecificService } from './user-specific.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-fdescribe('UserSpecificService', () => {
+describe('UserSpecificService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
       providers: [UserSpecificService]
