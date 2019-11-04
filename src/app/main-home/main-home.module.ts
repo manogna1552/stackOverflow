@@ -18,6 +18,7 @@ import { UserAnswersComponent } from './components/user-answers/user-answers.com
 import { UserCommentsComponent } from './components/user-comments/user-comments.component';
 import { AvatarModule } from 'ngx-avatar';
 import { UserNamePipe } from './user-name.pipe';
+import { Angular2CsvModule } from 'angular2-csv';
 
 
 
@@ -30,7 +31,8 @@ import { UserNamePipe } from './user-name.pipe';
     MaterialModule,
     ReactiveFormsModule,
     RichTextEditorAllModule,
-    AvatarModule
+    AvatarModule,
+    Angular2CsvModule
   ]
 })
 export class MainHomeModule { }

@@ -51,7 +51,7 @@ const mockgetQuesSvc= {
   
 };
 
-fdescribe('DashComponent', () => {
+describe('DashComponent', () => {
   let component: DashComponent;
   let fixture: ComponentFixture<DashComponent>;
   let quesSvc: GetQuestionService;

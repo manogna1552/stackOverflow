@@ -81,8 +81,8 @@ export class ViewQuestionComponent implements OnInit {
   }
   postComment(answerID) {
     this.postQuesService.postComment(this.id, answerID, this.comment, this.userId).subscribe(data => { console.log("success") })
-    this.router.navigate(['/view']);
-    location.reload();
+    this.router.navigate(['/afterLogin']);
+   // location.reload();
   }
 
   viewComment(ansid) {

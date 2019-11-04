@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
-import { Router, NavigationStart, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
-import { EventEmitterServiceService } from '../../event-emitter-service.service';
+import { Component, OnInit } from '@angular/core';
+
+import { Router, NavigationStart } from '@angular/router';
+
 
 @Component({
   selector: 'app-layout',
@@ -11,23 +11,14 @@ import { EventEmitterServiceService } from '../../event-emitter-service.service'
 export class LayoutComponent implements OnInit {
 
   showHead: boolean = false;
-  mobileQuery: MediaQueryList;
-  private _mobileQueryListener: () => void;
+
   dName: unknown;
   email: unknown;
   password: unknown;
   id: unknown;
   user
 
-  constructor(
-    changeDetectorRef: ChangeDetectorRef, 
-    media: MediaMatcher, 
-    private router: Router,
-    private eventEmitterService: EventEmitterServiceService) {
-
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-   // this.mobileQuery.addListener(this._mobileQueryListener);
+  constructor(private router: Router) {
    
    
    const path = this.router.url;
@@ -59,11 +50,6 @@ export class LayoutComponent implements OnInit {
       
     }
   });
-    
-  
-  //this.getUser();
-
-
   }
 
   ngOnInit() {
